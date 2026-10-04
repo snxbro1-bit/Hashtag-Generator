@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Hashtag Generator – Generate Social Media Hashtags</title>
+
+<meta name="description"
+content="Generate relevant hashtags instantly with our free online Hashtag Generator. Create hashtags for Instagram, TikTok, Facebook, YouTube and more.">
+
+<meta name="keywords"
+content="Hashtag Generator, hashtag generator online, Instagram hashtags, TikTok hashtags, Facebook hashtags, YouTube hashtags, free hashtag tool">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#5a2638;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(251,207,232,.85),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(254,205,211,.80),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255,228,230,.90),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff7f9,
+            #fff1f2,
+            #ffe4e6
+        );
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+    width:100%;
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:40px 18px;
+
+}
+
+
+/* HEADER */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.logo{
+
+    width:78px;
+
+    height:78px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:38px;
+
+    border-radius:23px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    border:
+        1px solid
+        rgba(244,63,94,.14);
+
+    box-shadow:
+        0 18px 45px
+        rgba(244,63,94,.14);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+h1{
+
+    margin-top:18px;
+
+    font-size:38px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    color:#e11d48;
+
+}
+
+.subtitle{
+
+    max-width:720px;
+
+    margin:12px auto 0;
+
+    color:#8a4a5b;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+/* TOOL */
+
+.tool{
+
+    padding:25px;
+
+    border-radius:26px;
+
+    background:
+        rgba(255,255,255,.86);
+
+    border:
+        1px solid
+        rgba(244,63,94,.13);
+
+    box-shadow:
+        0 30px 80px
+        rgba(190,24,93,.12);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+/* LABEL */
+
+.label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#831843;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+
+/* INPUT */
+
+input{
+
+    width:100%;
+
+    padding:16px 17px;
+
+    border:
+        1px solid
+        #fecdd3;
+
+    border-radius:14px;
+
+    outline:none;
+
+    background:#fffafb;
+
+    color:#5a2638;
+
+    font-size:16px;
+
+    transition:.2s;
+
+}
+
+input:focus{
+
+    border-color:#fb7185;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(244,63,94,.11);
+
+}
+
+
+/* CONTROLS */
+
+.controls{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+
+    margin-top:16px;
+
+}
+
+
+/* SELECT */
+
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:
+        1px solid
+        #fecdd3;
+
+    border-radius:13px;
+
+    outline:none;
+
+    background:#fffafb;
+
+    color:#6b263d;
+
+    font-size:15px;
+
+}
+
+
+/* GENERATE */
+
+.generate-btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border:0;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fb7185,
+            #e11d48
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 14px 30px
+        rgba(225,29,72,.18);
+
+    transition:.2s;
+
+}
+
+.generate-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* RESULT */
+
+.result-box{
+
+    margin-top:22px;
+
+    padding:18px;
+
+    min-height:150px;
+
+    border-radius:16px;
+
+    background:#fff8fa;
+
+    border:
+        1px solid
+        #fecdd3;
+
+    color:#7f3049;
+
+    font-size:16px;
+
+    line-height:2;
+
+    word-break:break-word;
+
+}
+
+
+/* PLACEHOLDER */
+
+.placeholder{
+
+    color:#a56b7c;
+
+    text-align:center;
+
+    padding:35px 10px;
+
+    line-height:1.7;
+
+}
+
+
+/* RESULT HASHTAGS */
+
+.hashtag{
+
+    display:inline-block;
+
+    margin:4px;
+
+    padding:5px 10px;
+
+    border-radius:8px;
+
+    background:#ffe4e6;
+
+    color:#be123c;
+
+    font-weight:700;
+
+    font-size:14px;
+
+}
+
+
+/* ACTIONS */
+
+.actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:14px;
+
+}
+
+.action-btn{
+
+    flex:1;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.copy-btn{
+
+    background:#fb7185;
+
+    color:white;
+
+}
+
+.clear-btn{
+
+    background:#ffe4e6;
+
+    color:#be123c;
+
+    border:
+        1px solid
+        #fecdd3;
+
+}
+
+.action-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* COUNT */
+
+.count-info{
+
+    margin-top:12px;
+
+    text-align:center;
+
+    color:#9f5268;
+
+    font-size:13px;
+
+}
+
+
+/* PLATFORM */
+
+.platforms{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+
+    margin-top:18px;
+
+}
+
+.platform{
+
+    padding:13px 8px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    background:#fffafb;
+
+    border:
+        1px solid
+        #ffe4e6;
+
+    color:#9f1239;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+/* FEATURES */
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+.feature{
+
+    padding:10px 17px;
+
+    border-radius:50px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:
+        1px solid
+        #fecdd3;
+
+    color:#be123c;
+
+    font-size:13px;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#9f5268;
+
+    font-size:13px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .container{
+
+        padding:25px 12px;
+
+    }
+
+    h1{
+
+        font-size:29px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .tool{
+
+        padding:16px;
+
+        border-radius:20px;
+
+    }
+
+    .controls{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .platforms{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .actions{
+
+        flex-direction:column;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+
+        <div class="logo">
+
+            #️⃣
+
+        </div>
+
+
+        <h1>
+
+            Free Hashtag Generator
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Generate relevant hashtags for Instagram,
+            TikTok, Facebook, YouTube and other social
+            media platforms in seconds.
+
+        </p>
+
+
+    </div>
+
+
+
+    <!-- TOOL -->
+
+    <div class="tool">
+
+
+        <label class="label">
+
+            Enter your topic or keywords
+
+        </label>
+
+
+        <input
+            type="text"
+            id="topicInput"
+            placeholder="Example: fitness, travel, food, business..."
+            onkeydown="handleEnter(event)"
+        >
+
+
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+
+            <div>
+
+                <label class="label">
+
+                    Number of Hashtags
+
+                </label>
+
+                <select id="countSelect">
+
+                    <option value="10">
+                        10 Hashtags
+                    </option>
+
+                    <option value="15">
+                        15 Hashtags
+                    </option>
+
+                    <option value="20" selected>
+                        20 Hashtags
+                    </option>
+
+                    <option value="30">
+                        30 Hashtags
+                    </option>
+
+                    <option value="40">
+                        40 Hashtags
+                    </option>
+
+                    <option value="50">
+                        50 Hashtags
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label class="label">
+
+                    Platform
+
+                </label>
+
+                <select id="platformSelect">
+
+                    <option value="general">
+                        General
+                    </option>
+
+                    <option value="instagram">
+                        Instagram
+                    </option>
+
+                    <option value="tiktok">
+                        TikTok
+                    </option>
+
+                    <option value="facebook">
+                        Facebook
+                    </option>
+
+                    <option value="youtube">
+                        YouTube
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- GENERATE -->
+
+        <button
+            class="generate-btn"
+            onclick="generateHashtags()">
+
+            ✨ Generate Hashtags
+
+        </button>
+
+
+
+        <!-- RESULT -->
+
+        <div
+            class="result-box"
+            id="result">
+
+            <div class="placeholder">
+
+                Enter a topic above and click
+                <strong>Generate Hashtags</strong>
+                to create hashtags.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="actions">
+
+
+            <button
+                class="action-btn copy-btn"
+                onclick="copyHashtags()">
+
+                📋 Copy All
+
+            </button>
+
+
+            <button
+                class="action-btn clear-btn"
+                onclick="clearAll()">
+
+                🗑️ Clear
+
+            </button>
+
+
+        </div>
+
+
+
+        <div
+            class="count-info"
+            id="countInfo">
+
+            0 hashtags generated
+
+        </div>
+
+
+
+        <!-- PLATFORMS -->
+
+        <div class="platforms">
+
+
+            <div class="platform">
+
+                📸 Instagram
+
+            </div>
+
+
+            <div class="platform">
+
+                🎵 TikTok
+
+            </div>
+
+
+            <div class="platform">
+
+                👍 Facebook
+
+            </div>
+
+
+            <div class="platform">
+
+                ▶️ YouTube
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            ⚡ Instant Generation
+
+        </div>
+
+
+        <div class="feature">
+
+            #️⃣ Relevant Hashtags
+
+        </div>
+
+
+        <div class="feature">
+
+            📱 Social Media Ready
+
+        </div>
+
+
+        <div class="feature">
+
+            📋 Copy All
+
+        </div>
+
+
+        <div class="feature">
+
+            🆓 Free to Use
+
+        </div>
+
+
+        <div class="feature">
+
+            🔒 Browser Based
+
+        </div>
+
+
+        <div class="feature">
+
+            📱 Mobile Friendly
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Free Hashtag Generator • Create Social Media Hashtags
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* HASHTAG DATABASE */
+
+const hashtagDatabase = {
+
+    fitness: [
+        "fitness",
+        "fitnessmotivation",
+        "workout",
+        "gym",
+        "gymmotivation",
+        "fitlife",
+        "healthylifestyle",
+        "exercise",
+        "training",
+        "fitfam",
+        "bodybuilding",
+        "muscle",
+        "strength",
+        "fitnessjourney",
+        "health",
+        "wellness",
+        "workoutmotivation",
+        "fitnesstips",
+        "gymtime",
+        "healthy"
+    ],
+
+    food: [
+        "food",
+        "foodie",
+        "foodlover",
+        "foodphotography",
+        "foodstagram",
+        "instafood",
+        "yummy",
+        "delicious",
+        "tasty",
+        "foodblogger",
+        "homemade",
+        "cooking",
+        "recipe",
+        "foodlover",
+        "healthyfood",
+        "streetfood",
+        "dessert",
+        "lunch",
+        "dinner",
+        "breakfast"
+    ],
+
+    travel: [
+        "travel",
+        "travelgram",
+        "travelphotography",
+        "travelling",
+        "wanderlust",
+        "adventure",
+        "explore",
+        "vacation",
+        "holiday",
+        "trip",
+        "travelblogger",
+        "beautifuldestinations",
+        "nature",
+        "traveltheworld",
+        "tourism",
+        "backpacking",
+        "roadtrip",
+        "explorer",
+        "wanderer",
+        "instatravel"
+    ],
+
+    business: [
+        "business",
+        "entrepreneur",
+        "entrepreneurship",
+        "businessowner",
+        "smallbusiness",
+        "startup",
+        "success",
+        "marketing",
+        "digitalmarketing",
+        "onlinebusiness",
+        "businessgrowth",
+        "motivation",
+        "leadership",
+        "branding",
+        "sales",
+        "money",
+        "investing",
+        "workhard",
+        "mindset",
+        "successmindset"
+    ],
+
+    technology: [
+        "technology",
+        "tech",
+        "technologynews",
+        "innovation",
+        "ai",
+        "artificialintelligence",
+        "software",
+        "coding",
+        "programming",
+        "developer",
+        "webdevelopment",
+        "gadgets",
+        "technews",
+        "digital",
+        "futuretech",
+        "machinelearning",
+        "datascience",
+        "cybersecurity",
+        "computers",
+        "automation"
+    ],
+
+    beauty: [
+        "beauty",
+        "beautytips",
+        "makeup",
+        "makeuptutorial",
+        "skincare",
+        "skincareroutine",
+        "fashion",
+        "style",
+        "beautyblogger",
+        "glowingskin",
+        "haircare",
+        "hairstyle",
+        "cosmetics",
+        "lifestyle",
+        "selfcare",
+        "nails",
+        "nailart",
+        "beautycare",
+        "makeuplover",
+        "fashionstyle"
+    ],
+
+    motivation: [
+        "motivation",
+        "motivational",
+        "motivationdaily",
+        "success",
+        "successmindset",
+        "mindset",
+        "inspiration",
+        "inspirational",
+        "positivevibes",
+        "positivity",
+        "goals",
+        "dreambig",
+        "nevergiveup",
+        "believeinyourself",
+        "selfimprovement",
+        "personaldevelopment",
+        "growthmindset",
+        "lifequotes",
+        "quotes",
+        "hustle"
+    ],
+
+    photography: [
+        "photography",
+        "photographer",
+        "photooftheday",
+        "photographylovers",
+        "photo",
+        "instagood",
+        "picoftheday",
+        "naturephotography",
+        "portraitphotography",
+        "streetphotography",
+        "landscapephotography",
+        "creativephotography",
+        "mobilephotography",
+        "photoshoot",
+        "camera",
+        "canon",
+        "nikon",
+        "sony",
+        "visuals",
+        "art"
+    ],
+
+    youtube: [
+        "youtube",
+        "youtuber",
+        "youtubechannel",
+        "youtubers",
+        "youtubevideo",
+        "videocreator",
+        "contentcreator",
+        "creator",
+        "newvideo",
+        "viral",
+        "trending",
+        "subscribe",
+        "video",
+        "vlog",
+        "vlogging",
+        "shorts",
+        "youtubeshorts",
+        "content",
+        "digitalcreator",
+        "creatorlife"
+    ]
+
+};
+
+
+/* GENERAL HASHTAGS */
+
+const generalHashtags = [
+
+    "viral",
+    "trending",
+    "explore",
+    "explorepage",
+    "fyp",
+    "foryou",
+    "foryoupage",
+    "instagood",
+    "photooftheday",
+    "love",
+    "life",
+    "lifestyle",
+    "beautiful",
+    "happy",
+    "follow",
+    "like",
+    "share",
+    "new",
+    "daily",
+    "inspiration",
+    "creative",
+    "contentcreator",
+    "socialmedia",
+    "trendingnow",
+    "reels",
+    "reelsinstagram",
+    "shorts",
+    "viralvideo",
+    "community"
+
+];
+
+
+/* GENERATE */
+
+function generateHashtags(){
+
+    const input =
+        document
+            .getElementById("topicInput")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    if(!input){
+
+        alert(
+            "Please enter a topic or keyword first."
+        );
+
+        return;
+
+    }
+
+
+    const count =
+        parseInt(
+            document
+                .getElementById("countSelect")
+                .value
+        );
+
+
+    const platform =
+        document
+            .getElementById("platformSelect")
+            .value;
+
+
+    /* KEYWORDS */
+
+    const keywords =
+        input
+            .split(/[\s,]+/)
+            .filter(Boolean);
+
+
+    let hashtags = [];
+
+
+    /*
+       ADD USER KEYWORDS
+    */
+
+    keywords.forEach(keyword => {
+
+        const clean =
+            keyword
+                .replace(/[^a-z0-9]/gi,"");
+
+        if(clean){
+
+            hashtags.push(clean);
+
+        }
+
+    });
+
+
+    /*
+       MATCH DATABASE
+    */
+
+    let matched = [];
+
+
+    keywords.forEach(keyword => {
+
+        Object.keys(hashtagDatabase)
+            .forEach(category => {
+
+                if(
+                    category.includes(keyword) ||
+                    keyword.includes(category)
+                ){
+
+                    matched =
+                        matched.concat(
+                            hashtagDatabase[category]
+                        );
+
+                }
+
+            });
+
+    });
+
+
+    /*
+       PARTIAL CATEGORY MATCH
+    */
+
+    if(matched.length === 0){
+
+        Object.keys(hashtagDatabase)
+            .forEach(category => {
+
+                if(
+                    input.includes(category)
+                ){
+
+                    matched =
+                        matched.concat(
+                            hashtagDatabase[category]
+                        );
+
+                }
+
+            });
+
+    }
+
+
+    /*
+       ADD GENERAL TAGS
+    */
+
+    matched =
+        matched.concat(
+            generalHashtags
+        );
+
+
+    /*
+       PLATFORM TAGS
+    */
+
+    const platformTags = {
+
+        instagram:[
+            "instagram",
+            "instadaily",
+            "instareels",
+            "instagramreels",
+            "reelitfeelit"
+        ],
+
+        tiktok:[
+            "tiktok",
+            "tiktokviral",
+            "tiktoktrend",
+            "fyp",
+            "foryoupage"
+        ],
+
+        facebook:[
+            "facebook",
+            "facebookreels",
+            "facebookpage",
+            "facebookmarketing",
+            "facebookviral"
+        ],
+
+        youtube:[
+            "youtube",
+            "youtuber",
+            "youtubevideo",
+            "youtubeshorts",
+            "subscribe"
+        ],
+
+        general:[]
+
+    };
+
+
+    if(
+        platformTags[platform]
+    ){
+
+        matched =
+            platformTags[platform]
+                .concat(matched);
+
+    }
+
+
+    /*
+       REMOVE DUPLICATES
+    */
+
+    const unique = [
+        ...new Set(
+            matched
+                .map(
+                    tag =>
+                    tag
+                        .replace(/^#/,"")
+                        .replace(/[^a-zA-Z0-9]/g,"")
+                        .toLowerCase()
+                )
+                .filter(Boolean)
+        )
+    ];
+
+
+    /*
+       SHUFFLE
+    */
+
+    for(
+        let i = unique.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            unique[i],
+            unique[j]
+        ] =
+        [
+            unique[j],
+            unique[i]
+        ];
+
+    }
+
+
+    /*
+       TAKE REQUIRED COUNT
+    */
+
+    let selected =
+        unique.slice(
+            0,
+            count
+        );
+
+
+    /*
+       MAKE SURE USER KEYWORDS COME FIRST
+    */
+
+    const userTags =
+        keywords
+            .map(
+                keyword =>
+                keyword
+                    .replace(
+                        /[^a-zA-Z0-9]/g,
+                        ""
+                    )
+                    .toLowerCase()
+            )
+            .filter(Boolean);
+
+
+    selected =
+        [
+            ...new Set(
+                [
+                    ...userTags,
+                    ...selected
+                ]
+            )
+        ]
+        .slice(0,count);
+
+
+    /*
+       DISPLAY
+    */
+
+    const result =
+        document
+            .getElementById("result");
+
+
+    result.innerHTML =
+        selected
+            .map(
+                tag =>
+                `<span class="hashtag">#${tag}</span>`
+            )
+            .join("");
+
+
+    document
+        .getElementById("countInfo")
+        .textContent =
+        selected.length +
+        " hashtags generated";
+
+}
+
+
+/* COPY */
+
+async function copyHashtags(){
+
+    const result =
+        document
+            .getElementById("result");
+
+
+    const tags =
+        result
+            .querySelectorAll(".hashtag");
+
+
+    if(tags.length === 0){
+
+        alert(
+            "Please generate hashtags first."
+        );
+
+        return;
+
+    }
+
+
+    const text =
+        Array.from(tags)
+            .map(
+                tag =>
+                tag.textContent
+            )
+            .join(" ");
+
+
+    try{
+
+        await navigator
+            .clipboard
+            .writeText(text);
+
+
+        const button =
+            document
+                .querySelector(".copy-btn");
+
+
+        button.textContent =
+            "✅ Copied!";
+
+
+        setTimeout(function(){
+
+            button.textContent =
+                "📋 Copy All";
+
+        },1500);
+
+
+    }
+
+    catch(error){
+
+        alert(
+            "Unable to copy hashtags."
+        );
+
+    }
+
+}
+
+
+/* CLEAR */
+
+function clearAll(){
+
+    document
+        .getElementById("topicInput")
+        .value = "";
+
+
+    document
+        .getElementById("result")
+        .innerHTML = `
+
+            <div class="placeholder">
+
+                Enter a topic above and click
+                <strong>Generate Hashtags</strong>
+                to create hashtags.
+
+            </div>
+
+        `;
+
+
+    document
+        .getElementById("countInfo")
+        .textContent =
+        "0 hashtags generated";
+
+}
+
+
+/* ENTER KEY */
+
+function handleEnter(event){
+
+    if(event.key === "Enter"){
+
+        generateHashtags();
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
